@@ -1,0 +1,63 @@
+@import "../../../styles/variables.scss";
+
+.sidebar {
+  padding: 30px 15px;
+  background: white;
+
+  &-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  &-item {
+    font-size: 16px;
+    font-weight: 700;
+    padding: 12px;
+    display: block;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+
+    &__active {
+      color: $primary-color;
+    }
+  }
+
+  .sidebar-submenu {
+    .sidebar-submenu-item {
+      padding: 12px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 400;
+      border-radius: 3px;
+      transition: .3s;
+
+      &:hover {
+        background: $light-grey-2;
+      }
+
+      &:active {
+        background: $primary-color-light;
+      }
+    }
+  }
+}
+
+@media all and (min-width: 768px) {
+  .sidebar {
+    max-width: 286px;
+    width: 100%;
+  }
+}
+
+@media all and (min-width: 320px) and (max-width: 767px) {
+  .sidebar-header {
+    padding: 16px;
+    box-sizing: border-box;
+    background: $light-grey-3;
+  }
+}

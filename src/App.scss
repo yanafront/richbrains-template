@@ -1,0 +1,93 @@
+@import "styles/variables.scss";
+@import "styles/helpers.scss";
+@import "styles/typography.scss";
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: local('Playfair Display Regular'),
+  local('PlayfairDisplay-Regular'),
+  url('fonts/playfair-display/Playfairdisplayregular.woff2') format('woff2'),
+  url('fonts/playfair-display/Playfairdisplayregular.woff') format('woff'),
+  url('fonts/playfair-display/Playfairdisplayregular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica';
+  src: local('Helvetica'),
+  local('Helvetica'),
+  url('fonts/helvetica/Helvetica.woff2') format('woff2'),
+  url('fonts/helvetica/Helvetica.woff') format('woff'),
+  url('fonts/helvetica/Helvetica.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+* {
+  font-family: 'Helvetica';
+}
+
+a {
+  &:visited {
+    color: $black;
+  }
+
+  &:active,
+  &:focus {
+    color: $primary-color;
+  }
+}
+
+body {
+  background: $bg-app;
+  max-width: 100%;
+}
+
+.app {
+  padding: 30px 0;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+
+  &-header {
+    padding: 30px 0;
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .content {
+    padding-left: 15px;
+  }
+
+  .divider {
+    background: $light-grey;
+    height: 1px;
+  }
+}
+
+/* netbook */
+@media all and (min-width: 901px) and (max-width: 1165px) {
+  .app {
+    padding: 16px;
+  }
+}
+
+/* mobile */
+@media all and (min-width: 320px) and (max-width: 767px) {
+  body {
+    background: $white;
+  }
+
+  .app {
+    padding: 16px;
+
+    &-content {
+      flex-direction: column;
+    }
+  }
+}
